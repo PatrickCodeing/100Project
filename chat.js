@@ -1,6 +1,6 @@
 // Your web app's Firebase configuration
 //ADD YOUR FIREBASE LINKS HERE
-const firebaseConfig = {
+var firebaseConfig = {
     apiKey: "AIzaSyDls4JyuN3cTM0punTFadL0_ZHMVQmnJ8k",
     authDomain: "project-accfc.firebaseapp.com",
     databaseURL: "https://project-accfc-default-rtdb.firebaseio.com",
