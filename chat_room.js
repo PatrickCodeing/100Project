@@ -23,6 +23,7 @@ function addRoom()
 
       window.location = "chat_page.html";
 }
+
 user_name = localStorage.getItem("user_name");
 document.getElementById("user_name").innerHTML = "Welcome " + user_name + "!";
 
@@ -34,3 +35,29 @@ function getData() {firebase.database().ref("/").on('value', function(snapshot) 
    document.getElementById("output").innerHTML +=row;
    //End code
    });});}
+
+   function addRoom()
+{
+      room = document.getElementById("room_name").value;
+      firebase.database().ref("/").child(room).update({
+            purpose : "adding room name"
+      });
+
+      localStorage.setItem("room_name", room);
+
+      window.location = "chat_page.html";
+}
+
+function redirect(name)
+{
+      console.log(name);
+      localStorage.setItem("room_name", name);
+      window.location = "kwitter_page.html";
+}
+
+function logout()
+{
+localStorage.removeItem("user_name");
+localStorage.removeItem("room_name");
+window.location = "index.html";
+}
