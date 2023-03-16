@@ -8,6 +8,7 @@ var firebaseConfig = {
       appId: "1:489904404640:web:9afebc3a163939be6ef1c5",
       measurementId: "G-8QGTSZ25J4"
     };
+    
   
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
@@ -36,23 +37,13 @@ function getData() {firebase.database().ref("/").on('value', function(snapshot) 
    //End code
    });});}
 
-   function addRoom()
-{
-      room = document.getElementById("room_name").value;
-      firebase.database().ref("/").child(room).update({
-            purpose : "adding room name"
-      });
-
-      localStorage.setItem("room_name", room);
-
-      window.location = "chat_page.html";
-}
+getData();
 
 function redirect(name)
 {
       console.log(name);
       localStorage.setItem("room_name", name);
-      window.location = "kwitter_page.html";
+      window.location = "chat_page.html";
 }
 
 function logout()
